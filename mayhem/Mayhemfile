@@ -1,0 +1,8 @@
+project: mfcmapi
+target: mfcmapi-fuzz
+duration: 90
+
+cmds:
+  - cmd: /mfcmapi-fuzz
+    libfuzzer: true
+
