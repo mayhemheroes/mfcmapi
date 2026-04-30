@@ -8,7 +8,6 @@ on:
 
 permissions:
   contents: read
-  security-events: write
 
 env:
   REGISTRY: ghcr.io
@@ -41,10 +40,4 @@ jobs:
         with:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
           args: --project mfcmapi --target mfcmapi-fuzz --image ${{ env.IMAGE_NAME }}:${{ github.sha }} --file mayhem/Mayhemfile --duration 90
-          sarif-output: sarif
           coverage-output: coverage
-
-      - name: Upload SARIF file
-        uses: github/codeql-action/upload-sarif@v3
-        with:
-          sarif_file: sarif
