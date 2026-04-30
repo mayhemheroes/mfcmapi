@@ -36,7 +36,7 @@ jobs:
           tags: ${{ env.IMAGE_NAME }}:${{ github.sha }}
 
       - name: Run Mayhem
-        uses: ForAllSecure/mcode-action@v2
+        uses: ForAllSecure/mcode-action@long-runs
         with:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
           args: --project mfcmapi --target mfcmapi-fuzz --image ${{ env.IMAGE_NAME }}:${{ github.sha }} --file mayhem/Mayhemfile --duration 0
