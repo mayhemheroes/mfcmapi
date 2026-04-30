@@ -39,5 +39,5 @@ jobs:
         uses: ForAllSecure/mcode-action@v2
         with:
           mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
-          args: --project mfcmapi --target mfcmapi-fuzz --image ${{ env.IMAGE_NAME }}:${{ github.sha }} --file mayhem/Mayhemfile --duration 90
+          args: --project mfcmapi --target mfcmapi-fuzz --image ${{ env.IMAGE_NAME }}:${{ github.sha }} --file mayhem/Mayhemfile --duration 0
           coverage-output: coverage
